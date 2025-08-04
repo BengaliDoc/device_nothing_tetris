@@ -8,23 +8,20 @@
 $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit_only.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 
-# Inherit some common AOSP stuff.
-$(call inherit-product, vendor/aosp/config/common_full_phone.mk)
+# Inherit some common infinity stuff.
+$(call inherit-product, vendor/infinity/config/common_full_phone.mk)
 
 # Inherit from tetris device
 $(call inherit-product, device/nothing/tetris/device.mk)
 
-PRODUCT_NAME := aosp_tetris
+PRODUCT_NAME := infinity_tetris
 PRODUCT_DEVICE := tetris
 PRODUCT_BRAND := Nothing
 PRODUCT_MANUFACTURER := Nothing
 PRODUCT_MODEL := A015
 
 PRODUCT_GMS_CLIENTID_BASE := android-nothing
-
 DEVICE_CODENAME := tetris
-
-TARGET_SCREEN_WIDTH := 1080
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
     BuildDesc="Tetris 15 AP3A.240905.015 2502082015 release-keys" \
@@ -35,3 +32,15 @@ PRODUCT_BUILD_PROP_OVERRIDES += \
 TARGET_INCLUDE_UPDATER := true
 PRODUCT_PACKAGES += \
     Updater
+
+#Infinity Props
+INFINITY_BUILD_TYPE := OFFICIAL
+INFINITY_MAINTAINER := Dr.Opto
+
+# Device Prop
+TARGET_SCREEN_WIDTH := 1080
+TARGET_HAS_UDFPS := true
+TARGET_SUPPORTS_BLUR := true
+TARGET_FACE_UNLOCK_SUPPORTED := true
+TARGET_SUPPORTS_QUICK_TAP := false
+USE_PIXEL_CHARGER := true
